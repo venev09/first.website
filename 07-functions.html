@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors game</title>
+    <link rel="stylesheet" href="06-rock-paper-scissors.css">
+</head>
+<body id="body">
+<p id="game">Rock Paper Scissors game</p>
+<div id="gameq">
+<button class="rockBtn" onclick="
+function1();
+console.log(compMove);
+result('Its a tie','YOU WON','You lost');
+count();
+last();
+">&#9994;</button>
+<button class="paperBtn" onclick="
+function1();
+console.log(compMove);
+result('YOU WON','You lost','Its a tie');
+count();
+last();
+">&#9995;</button>
+<button class="scissorsBtn" onclick="
+function1();
+console.log(compMove);
+result ('You lost','Its a tie','YOU WON');
+count();
+last();
+console.log(countResult);
+">&#9996;</button><br><br>
+<p3 id="result">Result</p3><br>
+<br>
+<p5 class="choises"></p5>
+<p5 id="countRes">wins:   loses:   ties:   </p5> <br>
+<button id="resetBtn" onclick="
+document.getElementById('countRes').textContent='wins:0 loses:0 ties:0';
+countResult={
+        wins:0,
+        loses:0,
+        ties:0
+    };
+document.querySelector('#result').innerHTML='Result';
+">Reset</button>
+</div>
+
+    <script>
+        
+    let countResult={
+        wins:0,
+        loses:0,
+        ties:0
+    };
+        let resultInJs;
+        let randomNum=Math.random();
+let compMove='';
+function function1(){
+    randomNum=Math.random();
+    compMove='';
+if (randomNum>=0 && randomNum< 1/3) {
+compMove='Rock';    
+} else if (randomNum>=1/3&&randomNum<2/3) {
+compMove='Paper';
+} else if (randomNum>=2/3&&randomNum<1) {
+compMove='Scissors';
+}
+}
+function result(round1,round2,round3) {
+if (compMove==='Rock') document.getElementById('result').textContent=round1;
+else if (compMove==='Scissors') document.getElementById('result').textContent=round2;
+else if (compMove==='Paper') document.getElementById('result').textContent=round3;
+resultInJs=document.getElementById('result').textContent;
+
+}
+
+function count(){
+    if (resultInJs==='You lost') countResult.loses++;
+    else if (resultInJs==='YOU WON') countResult.wins++;
+    else if (resultInJs==='Its a tie') countResult.ties++;
+}
+
+function last(){
+let stats=document.getElementById('countRes').textContent;
+stats='wins:'+countResult.wins+' loses:'+countResult.loses+' ties:'+countResult.ties;
+document.getElementById('countRes').textContent=stats;
+}
+
+</script>
+</body>
+</html>

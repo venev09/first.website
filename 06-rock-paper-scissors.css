@@ -1,0 +1,41 @@
+body{
+background-color: rgb(29, 29, 29);
+}
+#game{
+
+    font-size: 3.5em;
+    color:white
+}
+#gameq{
+
+    size:3em;
+}
+.rockBtn, .scissorsBtn, .paperBtn{
+border-radius: 1100px;
+padding: 100px 100px 100px 100px;
+font-size: 700%;
+width:3em;
+border-width: 5px;
+border-color: white;
+background-color:rgb(29, 29, 29);
+}
+p{
+    color:white;
+}
+#result{
+    color:white;
+    font-size:4em;
+}
+
+#countRes{
+    color:white;
+    font-size:3em;
+}
+
+#resetBtn{
+    font-size:4em;
+    padding:10px 25px 10px 25px; 
+    margin-top: 20px;
+    border-radius: 20px;
+
+}
